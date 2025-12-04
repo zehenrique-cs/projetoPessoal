@@ -35,13 +35,20 @@ function gerarSenhas(tamanhoSenha){
 }
 
 let pergunta
+let senhasGeradas = []
 
 do{
 console.log("=========Gerador de senhas=========")
 let tamanho = parseInt(prompt("Digite o tamanho da senha: "))
-console.log("\nSenha gerada:", gerarSenhas(tamanho), "\n")
+let senha = gerarSenhas(tamanho)
+senhasGeradas.push(`${senha} | tamanho: ${tamanho}`)
 
+console.log(`\nSenha gerada: ${senha}\n`)
 pergunta = prompt("Deseja fazer uma nova senha[s/n]: ").toLowerCase()
 }while(pergunta != "n")
+console.log(`\nSenhas geradas:`)
+for(let i = 0; i < senhasGeradas.length; i++){
+    console.log(senhasGeradas[i])
+}
 
-console.log("Obrigado por usar o meu programa")
+console.log("\nObrigado por usar o meu programa")
